@@ -3,12 +3,12 @@ import { Request, Response } from 'express'
 
 class UserController {
   async create (req: Request, res: Response): Promise<Response> {
-    const { name, username, password } = req.body
+    const { name, username, password, roles } = req.body
 
     const userService = new UserService()
 
     try {
-      const user = await userService.create({ name, username, password })
+      const user = await userService.create({ name, username, password, roles })
       return res.status(201).json(user)
     } catch (err) {
       return res.status(400).json({ error: err.message })
