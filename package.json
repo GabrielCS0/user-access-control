@@ -1,5 +1,5 @@
 {
-  "name": "node-typescript-setup",
+  "name": "user-access-control",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Gabriel <gabrielcemp@gmail.com>",
@@ -8,7 +8,8 @@
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",
     "start": "node dist/server.js",
     "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify src/server.ts",
-    "test": "jest"
+    "test": "jest",
+    "typeorm": "tsnd ./node_modules/typeorm/cli.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.10",
