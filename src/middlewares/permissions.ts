@@ -10,6 +10,7 @@ class Permissions {
     if (typeof authHeader !== 'string') { return undefined }
 
     const [, token] = authHeader.split(' ')
+    if (token === undefined) { return undefined }
 
     const payload = decode(token)
 
