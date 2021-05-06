@@ -14,6 +14,12 @@ class RoleController {
       return res.status(400).json({ error: err.message })
     }
   }
+
+  async listAllRoles (req: Request, res: Response): Promise<Response> {
+    const roleService = new RoleService()
+    const allRoles = await roleService.listAllRoles()
+    return res.json(allRoles)
+  }
 }
 
 export default new RoleController()

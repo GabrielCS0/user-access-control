@@ -12,6 +12,7 @@ router.post('/users', UserController.create)
 router.post('/sessions', SessionController.create)
 router.post('/permissions', PermissionController.create)
 router.post('/roles', RoleController.create)
+router.get('/roles', RoleController.listAllRoles)
 
 router.post('/products', Permissions.is(['ROLE_ADMIN']), ProductController.create)
 router.get('/products', Permissions.is(['ROLE_ADMIN', 'ROLE_USER']), ProductController.showAll)

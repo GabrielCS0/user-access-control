@@ -36,6 +36,11 @@ class RoleService {
 
     return role
   }
+
+  async listAllRoles () {
+    const allRoles = await this.roleRepository.find({ relations: ['permission'] })
+    return allRoles
+  }
 }
 
 export { RoleService }
